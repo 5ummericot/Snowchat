@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1490" height="778" viewBox="0 0 1490 778" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="1490" height="778" fill="#ffffff"/>
+<text x="44" y="40" font-size="21" font-weight="800" fill="#0f172a">SnowBuild — SNOWCHAT 워크플로우 구성도</text>
+<text x="44" y="62" font-size="13" fill="#64748b">사용자의 말을 분류(Classify)해 알맞은 경로로 보내고, 경로별 에이전트(Agent)가 산출물을 생성합니다.</text>
+<rect x="605.0" y="86.0" width="280.0" height="46.0" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.6"/>
+<text x="617.0" y="102.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#475569" letter-spacing="0.5">START</text>
+<text x="745.0" y="117.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">보안정책 안내 · 시작</text>
+<line x1="745.0" y1="132.0" x2="745.0" y2="150.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="515.0" y="150.0" width="460.0" height="54.0" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="527.0" y="166.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#2563eb" letter-spacing="0.5">CLASSIFY</text>
+<text x="745.0" y="185.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">사용자 의도 분류</text>
+<line x1="745.0" y1="204.0" x2="745.0" y2="232.0" stroke="#94a3b8" stroke-width="1.8"/>
+<line x1="150.0" y1="232.0" x2="1340.0" y2="232.0" stroke="#94a3b8" stroke-width="1.8"/>
+<line x1="150.0" y1="232.0" x2="150.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="44.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="150.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">① 새 프로젝트</text>
+<line x1="150.0" y1="304.0" x2="150.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="44.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="56.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="150.0" y="363.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">온보딩: 아이디어→</text>
+<text x="150.0" y="380.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">웹/앱·설계질문·일정</text>
+<line x1="150.0" y1="396.0" x2="150.0" y2="426.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="44.0" y="426.0" width="212.0" height="64.0" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="56.0" y="442.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#7c3aed" letter-spacing="0.5">외부연동</text>
+<text x="150.0" y="457.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">Google Sheets</text>
+<text x="150.0" y="474.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">프로젝트 생성</text>
+<line x1="388.0" y1="232.0" x2="388.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="282.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="388.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">② Think · 설계</text>
+<line x1="388.0" y1="304.0" x2="388.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="282.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="294.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="388.0" y="363.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">인터뷰 →</text>
+<text x="388.0" y="380.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">요구사항·과업·판정기준</text>
+<line x1="388.0" y1="396.0" x2="388.0" y2="426.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="282.0" y="426.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="294.0" y="442.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="388.0" y="466.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">판정기준 다듬기</text>
+<line x1="388.0" y1="490.0" x2="388.0" y2="520.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="282.0" y="520.0" width="212.0" height="64.0" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="294.0" y="536.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#dc2626" letter-spacing="0.5">GUARDRAIL</text>
+<text x="388.0" y="560.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">PII·비공개자료 차단</text>
+<line x1="388.0" y1="584.0" x2="388.0" y2="614.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="282.0" y="614.0" width="212.0" height="64.0" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.6"/>
+<text x="294.0" y="630.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#475569" letter-spacing="0.5">END</text>
+<text x="388.0" y="645.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">산출물 +</text>
+<text x="388.0" y="662.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">&#x27;다음 할 일&#x27;</text>
+<line x1="626.0" y1="232.0" x2="626.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="520.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="626.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">③ Make · 제작</text>
+<line x1="626.0" y1="304.0" x2="626.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="520.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="532.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="626.0" y="372.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">프롬프트 팩 생성</text>
+<line x1="626.0" y1="396.0" x2="626.0" y2="426.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="520.0" y="426.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="532.0" y="442.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="626.0" y="466.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">막힘 도우미</text>
+<line x1="626.0" y1="490.0" x2="626.0" y2="520.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="520.0" y="520.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="532.0" y="536.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="626.0" y="551.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">빌드 대조</text>
+<text x="626.0" y="568.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">반영·누락·차이</text>
+<line x1="626.0" y1="584.0" x2="626.0" y2="614.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="520.0" y="614.0" width="212.0" height="64.0" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="532.0" y="630.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#7c3aed" letter-spacing="0.5">외부연동</text>
+<text x="626.0" y="645.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">Google Sheets</text>
+<text x="626.0" y="662.5" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">대조 기록</text>
+<line x1="864.0" y1="232.0" x2="864.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="758.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="864.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">④ Check · 검증</text>
+<line x1="864.0" y1="304.0" x2="864.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="758.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="770.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="864.0" y="372.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">테스트 시나리오</text>
+<line x1="864.0" y1="396.0" x2="864.0" y2="426.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="758.0" y="426.0" width="212.0" height="64.0" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="770.0" y="442.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#2563eb" letter-spacing="0.5">CLASSIFY</text>
+<text x="864.0" y="466.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">원인 진단 ①~④</text>
+<line x1="864.0" y1="490.0" x2="864.0" y2="520.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="758.0" y="520.0" width="212.0" height="64.0" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="770.0" y="536.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#d97706" letter-spacing="0.5">IF-ELSE</text>
+<text x="864.0" y="560.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">복귀 경로</text>
+<line x1="864.0" y1="584.0" x2="864.0" y2="614.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="758.0" y="614.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="770.0" y="630.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="864.0" y="654.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">복귀 추천</text>
+<line x1="1102.0" y1="232.0" x2="1102.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="996.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="1102.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">⑤ 요청형 &#x27;~가 필요해&#x27;</text>
+<line x1="1102.0" y1="304.0" x2="1102.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="996.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="1008.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#2563eb" letter-spacing="0.5">CLASSIFY</text>
+<text x="1102.0" y="372.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">템플릿 매칭</text>
+<line x1="1102.0" y1="396.0" x2="1102.0" y2="426.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="996.0" y="426.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="1008.0" y="442.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="1102.0" y="466.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">템플릿 JSON 생성</text>
+<line x1="1340.0" y1="232.0" x2="1340.0" y2="262.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="1234.0" y="262.0" width="212" height="42" rx="8" fill="#0f172a"/>
+<text x="1340.0" y="288.0" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">⑥ 도움말</text>
+<line x1="1340.0" y1="304.0" x2="1340.0" y2="332.0" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="1234.0" y="332.0" width="212.0" height="64.0" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="1246.0" y="348.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="10.5" font-weight="700" fill="#16a34a" letter-spacing="0.5">AGENT</text>
+<text x="1340.0" y="372.0" font-family="Apple SD Gothic Neo, AppleGothic, Noto Sans KR, sans-serif" font-size="14.5" font-weight="600" fill="#0f172a" text-anchor="middle">사용법 안내</text>
+<text x="44" y="716" font-size="12.5" font-weight="700" fill="#334155">SNOWCHAT 노드 ·</text>
+<rect x="154.0" y="701.0" width="18" height="18" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="178.0" y="715.0" font-size="12.5" fill="#334155">CLASSIFY · 분류·라우팅</text>
+<rect x="310.1" y="701.0" width="18" height="18" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="334.1" y="715.0" font-size="12.5" fill="#334155">AGENT · LLM 생성</text>
+<rect x="444.3" y="701.0" width="18" height="18" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="468.3" y="715.0" font-size="12.5" fill="#334155">IF-ELSE · 조건 분기</text>
+<rect x="585.8" y="701.0" width="18" height="18" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="609.8" y="715.0" font-size="12.5" fill="#334155">GUARDRAIL · 개인정보 차단</text>
+<rect x="756.5" y="701.0" width="18" height="18" rx="4" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="780.5" y="715.0" font-size="12.5" fill="#334155">외부연동 · Sheets·Docs·Calendar</text>
+<rect x="985.6" y="701.0" width="18" height="18" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="1.6"/>
+<text x="1009.6" y="715.0" font-size="12.5" fill="#334155">START · 시작/종료</text>
+</svg>
