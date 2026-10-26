@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --blue:#2563eb; --ink:#0f172a; --sub:#64748b; --line:#e2e8f0;
+    --bg:#eef2f7; --agentbg:#f8fafc; --green:#16a34a;
+    --think:#0ea5e9; --make:#7c3aed; --check:#f59e0b;
+  }
+  html,body{ font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); }
+  .wrap{ width:1060px; padding:30px 30px 26px; }
+  .title{ font-size:21px; font-weight:800; letter-spacing:-.3px; }
+  .title .em{ color:var(--blue); }
+  .sub{ font-size:13px; color:var(--sub); margin-top:5px; margin-bottom:18px; }
+
+  /* 브라우저 창 */
+  .win{ background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+        box-shadow:0 14px 36px rgba(15,23,42,.08); }
+  .bar{ display:flex; align-items:center; gap:14px; padding:10px 14px; background:#f1f5f9; border-bottom:1px solid var(--line); }
+  .dots{ display:flex; gap:6px; } .dots i{ width:11px; height:11px; border-radius:50%; display:block; }
+  .dots i:nth-child(1){ background:#f87171; } .dots i:nth-child(2){ background:#fbbf24; } .dots i:nth-child(3){ background:#34d399; }
+  .url{ flex:1; background:#fff; border:1px solid var(--line); border-radius:8px; font-size:12px; color:#475569; padding:5px 12px; }
+  .url b{ color:var(--ink); font-weight:600; }
+
+  /* 앱 상단 */
+  .appnav{ display:flex; align-items:center; gap:10px; padding:11px 18px; border-bottom:1px solid var(--line); }
+  .logo{ width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,#38bdf8,#2563eb);
+         display:flex; align-items:center; justify-content:center; font-size:16px; }
+  .brand{ font-size:15px; font-weight:800; }
+  .brand small{ font-size:11.5px; color:var(--sub); font-weight:500; margin-left:6px; }
+  .navr{ margin-left:auto; display:flex; align-items:center; gap:10px; font-size:11.5px; color:var(--sub); }
+  .gw{ display:inline-flex; align-items:center; gap:6px; background:#eff6ff; color:var(--blue); border:1px solid #bfdbfe;
+       font-weight:700; padding:4px 10px; border-radius:999px; }
+  .gw::before{ content:""; width:7px; height:7px; border-radius:50%; background:#22c55e; }
+  .me{ width:28px; height:28px; border-radius:50%; background:#e0e7ff; color:#3730a3; font-weight:800; font-size:12px;
+       display:flex; align-items:center; justify-content:center; }
+
+  .body{ display:flex; }
+  /* 사이드바 */
+  .side{ width:200px; flex:none; border-right:1px solid var(--line); background:#fafbfd; padding:16px 14px; }
+  .lab{ font-size:10.5px; font-weight:700; color:#94a3b8; letter-spacing:.5px; margin-bottom:7px; }
+  .proj{ background:#fff; border:1px solid var(--line); border-radius:11px; padding:10px 11px; margin-bottom:18px; }
+  .proj .pn{ font-size:13px; font-weight:800; }
+  .proj .pt{ margin-top:5px; display:flex; gap:5px; }
+  .tag{ font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:6px; background:#f1f5f9; color:#475569; }
+  .files{ list-style:none; }
+  .files li{ font-size:12px; color:#334155; padding:5px 2px; display:flex; gap:7px; align-items:center; }
+  .files li .ok{ color:var(--green); font-weight:800; }
+  .files li.pend{ color:#94a3b8; }
+
+  /* 상단 진행 단계 */
+  .content{ flex:1; display:flex; flex-direction:column; background:#fff; min-width:0; }
+  .stepper{ display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .step{ display:flex; align-items:center; gap:8px; font-size:12.5px; color:#475569; padding:5px 12px 5px 6px; border-radius:999px; }
+  .step .n{ width:22px; height:22px; border-radius:50%; font-size:11px; font-weight:800; color:#fff;
+            display:flex; align-items:center; justify-content:center; flex:none; }
+  .step .st{ font-size:10.5px; font-weight:700; }
+  .step.done .n{ background:var(--think); } .step.done .st{ color:var(--think); }
+  .step.now{ background:#f5f3ff; color:var(--make); font-weight:800; }
+  .step.now .n{ background:var(--make); }
+  .step.todo{ color:#94a3b8; } .step.todo .n{ background:#cbd5e1; }
+  .link{ flex:1; height:2px; border-radius:2px; background:#e2e8f0; }
+  .link.on{ background:linear-gradient(90deg,var(--think),var(--make)); }
+  .hint{ margin-left:6px; font-size:11px; color:var(--sub); white-space:nowrap; }
+
+  /* 메인: 현재 단계(제작) 대화 + 설계 결과 참고 패널 */
+  .main{ flex:1; display:flex; }
+  .chatcol{ flex:1; display:flex; flex-direction:column; min-width:0; }
+  .chat{ padding:16px 18px; display:flex; flex-direction:column; gap:11px; }
+  .sys{ align-self:center; font-size:11.5px; color:var(--sub); background:#f1f5f9; border-radius:999px; padding:5px 12px; }
+  .sys b{ color:var(--think); }
+  .row{ display:flex; } .row.u{ justify-content:flex-end; }
+  .bub{ max-width:84%; font-size:12.8px; line-height:1.6; padding:9px 12px; border-radius:13px; }
+  .u .bub{ background:var(--blue); color:#fff; border-bottom-right-radius:4px; }
+  .ai .bub{ background:var(--agentbg); border:1px solid var(--line); border-bottom-left-radius:4px; }
+  .code{ margin-top:8px; background:#0f172a; border-radius:11px; padding:11px 12px; position:relative; }
+  .code .clab{ font-size:10.5px; color:#93c5fd; font-weight:700; letter-spacing:.4px; margin-bottom:6px; }
+  .code pre{ color:#e2e8f0; font-family:"SF Mono",Menlo,monospace; font-size:11px; line-height:1.55; white-space:pre-wrap; }
+  .copy{ position:absolute; top:9px; right:9px; font-size:10.5px; color:#cbd5e1; border:1px solid #334155; border-radius:7px; padding:3px 8px; }
+  .guard{ margin-top:8px; font-size:11.3px; color:#b45309; background:#fffbeb; border:1px solid #fde68a; border-radius:9px; padding:6px 9px; }
+  .attach{ display:inline-flex; gap:6px; align-items:center; font-size:11.5px; font-weight:600; background:rgba(255,255,255,.18);
+           border:1px solid rgba(255,255,255,.45); border-radius:8px; padding:4px 9px; margin-top:6px; color:#fff; }
+  .input{ margin:auto 18px 16px; display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:11px;
+          padding:9px 11px; font-size:12px; color:#94a3b8; }
+  .input .send{ margin-left:auto; background:var(--blue); color:#fff; font-weight:700; font-size:11px; padding:4px 10px; border-radius:7px; }
+
+  .ref{ width:268px; flex:none; border-left:1px solid var(--line); background:#fafbfd; padding:16px 14px; }
+  .refh{ display:flex; align-items:center; gap:7px; margin-bottom:4px; }
+  .cap{ font-size:11px; font-weight:700; color:#fff; padding:3px 9px; border-radius:999px; background:var(--think); }
+  .refh .t{ font-size:12.5px; font-weight:800; }
+  .refsub{ font-size:11px; color:var(--sub); margin-bottom:11px; }
+  .crit{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:9px 10px; margin-bottom:8px; }
+  .crit .k{ font-size:12px; font-weight:800; display:flex; align-items:center; gap:6px; }
+  .crit .v{ font-size:11.5px; color:#475569; line-height:1.5; margin-top:3px; }
+  .crit.on{ border:1.5px solid var(--make); background:#faf5ff; }
+  .crit .badge{ margin-left:auto; font-size:10px; font-weight:700; color:var(--make); background:#ede9fe; padding:2px 7px; border-radius:999px; }
+  .back{ margin-top:6px; font-size:11.5px; font-weight:700; color:#334155; border:1px solid var(--line); background:#fff;
+         border-radius:8px; padding:7px 10px; text-align:center; }
+  .foot{ margin-top:14px; font-size:11.5px; color:var(--sub); text-align:center; }
+  /* 단계별 색 */
+  .step.now.t{ background:#f0f9ff; color:#0284c7; } .step.now.t .n{ background:var(--think); }
+  .step.now.c{ background:#fffbeb; color:#b45309; } .step.now.c .n{ background:var(--check); }
+  .step.done.m .n{ background:var(--make); } .step.done.m .st{ color:var(--make); }
+  .files li.cur{ color:#0284c7; font-weight:700; }
+  .files li.cur.c{ color:#b45309; }
+  /* 설계: 기준 다듬기 */
+  .ba{ margin-top:8px; display:flex; align-items:stretch; gap:8px; }
+  .ba .b{ flex:1; background:#fff; border:1px dashed #cbd5e1; border-radius:9px; padding:7px 9px; font-size:12px; color:#64748b; }
+  .ba .a{ flex:1.4; background:#f0f9ff; border:1.5px solid var(--think); border-radius:9px; padding:7px 9px; font-size:12px; color:#0f172a; font-weight:600; }
+  .ba .t{ font-size:10px; font-weight:800; letter-spacing:.4px; margin-bottom:3px; color:#94a3b8; }
+  .ba .a .t{ color:#0284c7; }
+  .ba .arr{ align-self:center; color:#94a3b8; font-weight:800; }
+  .acts{ margin-top:9px; display:flex; gap:6px; flex-wrap:wrap; }
+  .btn{ font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:8px; border:1px solid var(--line); background:#fff; color:#334155; }
+  .btn.th{ background:var(--think); border-color:var(--think); color:#fff; }
+  .btn.mk{ background:var(--make); border-color:var(--make); color:#fff; }
+  /* 검증: 시나리오·진단 */
+  .scn{ margin-top:8px; background:#fff; border:1px solid var(--line); border-radius:10px; padding:4px 0; list-style:none; }
+  .scn li{ display:flex; gap:9px; padding:6px 11px; font-size:12.3px; align-items:flex-start; }
+  .scn li + li{ border-top:1px solid #f1f5f9; }
+  .scn .no{ width:18px; height:18px; border-radius:50%; background:#fef3c7; color:#b45309; font-size:10.5px; font-weight:800;
+            display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px; }
+  .diag{ margin-top:8px; border:1px solid #fde68a; background:#fffbeb; border-radius:10px; padding:9px 11px; }
+  .diag .dl{ font-size:10.5px; font-weight:800; color:#b45309; letter-spacing:.4px; }
+  .cats{ display:flex; gap:6px; margin:7px 0 6px; }
+  .cat{ font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; background:#fff; border:1px solid var(--line); color:#94a3b8; }
+  .cat.on{ background:var(--make); border-color:var(--make); color:#fff; }
+  .cap.check{ background:var(--check); }
+  .crit .badge.ok{ color:var(--green); background:#dcfce7; }
+  .crit .badge.ng{ color:#dc2626; background:#fee2e2; }
+  .crit .badge.wait{ color:#64748b; background:#f1f5f9; }
+  .crit .badge.th{ color:#0284c7; background:#e0f2fe; }
+  .crit.ng{ border:1.5px solid #dc2626; background:#fef2f2; }
+  .crit.pend{ border-style:dashed; background:#fff; }
+  .crit.pend .v{ color:#94a3b8; }
+  .crit.new{ border:1.5px solid var(--think); background:#f0f9ff; }
+  .tally{ display:flex; gap:6px; margin:-2px 0 11px; }
+  .tally span{ font-size:11px; font-weight:700; padding:3px 8px; border-radius:7px; }
+  .prog{ height:6px; border-radius:6px; background:#e2e8f0; margin:-2px 0 6px; overflow:hidden; }
+  .prog i{ display:block; height:100%; width:66%; background:var(--think); }
+  .progt{ font-size:11px; color:var(--sub); margin-bottom:11px; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="title">SnowBuild 사용 화면 ① 설계 — <span class="em">아이디어를 측정 가능한 '성공 기준'으로</span></div>
+  <div class="sub">챗봇이 질문을 하나씩 던져 요구사항을 정리하고, 모호한 기준은 확인할 수 있는 기준으로 다듬어 줍니다. · AI 기능은 SNOWCHAT API Gateway로 동작</div>
+
+  <div class="win">
+    <div class="bar">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="url">🔒 <b>snowbuild.app</b>/project/used-textbook/think</div>
+    </div>
+
+    <div class="appnav">
+      <div class="logo">❄️</div>
+      <div class="brand">SnowBuild<small>아이디어를 작동하는 제품으로</small></div>
+      <div class="navr"><span class="gw">SNOWCHAT API Gateway 연결됨</span><div class="me">지</div></div>
+    </div>
+
+    <div class="body">
+      <div class="side">
+        <div class="lab">내 프로젝트</div>
+        <div class="proj">
+          <div class="pn">숙대 중고 교재 거래</div>
+          <div class="pt"><span class="tag">웹</span><span class="tag">반복 1회차</span></div>
+        </div>
+
+        <div class="lab">산출물</div>
+        <ul class="files">
+          <li><span class="ok">✓</span>프로젝트 설정</li>
+          <li class="cur">● 요구사항표 (작성 중)</li>
+          <li class="cur">● 성공 기준 2/3</li>
+          <li class="pend">○ 프롬프트 팩</li>
+          <li class="pend">○ 테스트 시나리오</li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <div class="stepper">
+          <div class="step now t"><span class="n">1</span>설계 Think<span class="st">진행 중</span></div>
+          <div class="link"></div>
+          <div class="step todo"><span class="n">2</span>제작 Make<span class="st">🔒 잠김</span></div>
+          <div class="link"></div>
+          <div class="step todo"><span class="n">3</span>검증 Check<span class="st">🔒 잠김</span></div>
+          <span class="hint">성공 기준 3개가 정해지면 제작이 열려요</span>
+        </div>
+
+        <div class="main">
+          <div class="chatcol">
+            <div class="chat">
+              <div class="sys">새 프로젝트 · <b>웹</b>으로 시작했어요</div>
+              <div class="row u"><div class="bub">숙대 학생끼리 중고 교재를 사고파는 웹앱을 만들고 싶어요.</div></div>
+              <div class="row ai"><div class="bub">좋아요! 학생이 꼭 할 수 있어야 하는 핵심 행동 하나만 알려 주세요. (예: 교재 검색, 글 올리기, 연락하기)</div></div>
+              <div class="row u"><div class="bub">교재 검색이랑 글 올리기요. 글 올리기는 쓰기 쉬웠으면 좋겠어요.</div></div>
+              <div class="row ai"><div class="bub">
+                '쓰기 쉬움'은 나중에 확인하기 어려워요. <b>눌러 보면 바로 판단할 수 있는 기준</b>으로 바꿔 볼게요.
+                <div class="ba">
+                  <div class="b"><div class="t">처음 말한 기준</div>글 올리기가 쓰기 쉬웠으면</div>
+                  <div class="arr">→</div>
+                  <div class="a"><div class="t">다듬은 성공 기준</div>처음 쓰는 사람이 3분 안에 사진 1장+가격으로 등록 완료</div>
+                </div>
+                <div class="acts"><span class="btn th">✓ 이 기준으로 저장</span><span class="btn">↻ 다시 다듬기</span></div>
+              </div></div>
+              <div class="row ai"><div class="bub">마지막으로, 사는 사람은 파는 사람과 어떻게 연락하면 좋을까요?</div></div>
+            </div>
+            <div class="input">답을 입력하거나 '페르소나 필요해'처럼 요청해 보세요…<span class="send">보내기</span></div>
+          </div>
+
+          <div class="ref">
+            <div class="refh"><span class="cap">실시간 정리</span><span class="t">성공 기준</span></div>
+            <div class="refsub">대화하는 동안 자동으로 채워져요</div>
+            <div class="prog"><i></i></div>
+            <div class="progt">2 / 3 완료 · 3개가 되면 제작 단계가 열려요</div>
+            <div class="crit">
+              <div class="k">교재 검색<span class="badge th">저장됨</span></div>
+              <div class="v">키워드 입력 후 2초 안에 결과 10건 표시, 없으면 안내 문구</div>
+            </div>
+            <div class="crit new">
+              <div class="k">판매 글 등록<span class="badge th">방금 다듬음</span></div>
+              <div class="v">처음 쓰는 사람이 3분 안에 사진 1장+가격으로 등록 완료</div>
+            </div>
+            <div class="crit pend">
+              <div class="k">연락하기</div>
+              <div class="v">대화로 정하는 중…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">※ SnowBuild는 별도 웹사이트로 동작하며, 대화·분석·요청문 생성 등 핵심 AI 기능은 SNOWCHAT API Gateway를 통해 처리됩니다.</div>
+</div>
+</body></html>
